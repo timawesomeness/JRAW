@@ -170,6 +170,8 @@ public enum Endpoints {
     UNLOCK("POST /api/unlock", "modposts"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_marknsfw">{@code POST /api/marknsfw}</a>" included in the "modposts" scope */
     MARKNSFW("POST /api/marknsfw", "modposts"),
+    MARKSPOILER("POST /api/spoiler", "modposts"),
+    UNMARKSPOILER("POST /api/unspoiler", "modposts"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_set_subreddit_sticky">{@code POST /api/set_subreddit_sticky}</a>" included in the "modposts" scope */
     SET_SUBREDDIT_STICKY("POST /api/set_subreddit_sticky", "modposts"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_unmarknsfw">{@code POST /api/unmarknsfw}</a>" included in the "modposts" scope */

@@ -53,6 +53,24 @@ public class ModerationManager extends AbstractManager {
     }
 
     /**
+     * Sets whether or not this submission should be marked as a spoiler
+     *
+     * @param s    The submission to modify
+     * @param nsfw Whether or not this submission is a spoiler
+     * @throws net.dean.jraw.http.NetworkException If the request was not successful
+     * @throws net.dean.jraw.ApiException          If the API returned an error
+     */
+    @EndpointImplementation({Endpoints.MARKSPOILER, Endpoints.UNMARKSPOILER})
+    public void setSpoiler(Submission s, boolean nsfw) throws NetworkException,
+            ApiException {
+        genericPost(reddit.request()
+                .endpoint(nsfw ? Endpoints.MARKSPOILER : Endpoints.UNMARKSPOILER)
+                .post(JrawUtils.mapOf(
+                        "id", s.getFullName()
+                )).build());
+    }
+
+    /**
      * Deletes a submission that you posted
      *
      * @param thing The submission to delete
