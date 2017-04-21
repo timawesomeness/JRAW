@@ -9,7 +9,8 @@ public enum Sorting {
     NEW,
     RISING,
     CONTROVERSIAL(true),
-    TOP(true);
+    TOP(true),
+    COMMENTS;
 
     private boolean requiresTimePeriod;
 

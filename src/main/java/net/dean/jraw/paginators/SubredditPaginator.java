@@ -30,7 +30,7 @@ public class SubredditPaginator extends Paginator<Submission> {
     public SubredditPaginator(RedditClient creator) {
         this(creator, null);
     }
-    
+
     /**
      * Instantiates a new SubredditPaginator that will iterate through submissions of more than one subreddit.
      * @param creator The RedditClient that will be used to send HTTP requests
