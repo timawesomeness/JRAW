@@ -54,6 +54,11 @@ public class SubredditPaginator extends Paginator<Submission> {
     protected Map<String, String> getExtraQueryArgs() {
         Map<String, String> args = new HashMap<>(super.getExtraQueryArgs());
         args.put("obey_over18", String.valueOf(obeyOver18));
+        args.put("feature", "link_preview");
+        args.put("sr_detail", "true");
+        args.put("expand_srs", "true");
+        args.put("from_detail", "true");
+        args.put("always_show_media", "1");
         return args;
     }
     @Override
