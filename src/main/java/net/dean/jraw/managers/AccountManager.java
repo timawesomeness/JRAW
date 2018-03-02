@@ -102,6 +102,24 @@ public class AccountManager extends AbstractManager {
                 .build());
         return reddit.getSubmission(response.getJson().get("json").get("data").get("id").asText());
     }
+    
+    @EndpointImplementation(Endpoints.SUBMIT)
+    public Submission crosspost(Submission original, String to, String newTitle, Captcha captcha, String captchaAttempt) throws NetworkException, ApiException {
+        Map<String, String> args = JrawUtils.mapOf(
+                "api_type", "json",
+                "extension", "json",
+                "kind", "crosspost",
+                "sr", to,
+                "crosspost_fullname", original.getId(),
+                "title", newTitle
+        );
+        
+        RestResponse response = genericPost(reddit.request()
+                .endpoint(Endpoints.SUBMIT)
+                .post(args)
+                .build());
+        return reddit.getSubmission(response.getJson().get("json").get("data").get("id").asText());
+    }
 
     /**
      * Votes on a comment or submission. Please note that "API clients proxying a human's action one-for-one are OK, but
