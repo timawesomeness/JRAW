@@ -110,7 +110,7 @@ public class AccountManager extends AbstractManager {
                 "extension", "json",
                 "kind", "crosspost",
                 "sr", to,
-                "crosspost_fullname", original.getId(),
+                "crosspost_fullname", original.getFullName(),
                 "title", newTitle
         );
         
