@@ -19,6 +19,7 @@ import net.dean.jraw.models.FlairTemplate;
 import net.dean.jraw.models.KarmaBreakdown;
 import net.dean.jraw.models.PublicContribution;
 import net.dean.jraw.models.Submission;
+import net.dean.jraw.models.Comment;
 import net.dean.jraw.models.Subreddit;
 import net.dean.jraw.models.Thing;
 import net.dean.jraw.models.UserRecord;
