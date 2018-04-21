@@ -261,7 +261,16 @@ public class AccountManager extends AbstractManager {
                         "state", send
                 )).build());
     }
-
+    
+ @EndpointImplementation(Endpoints.SENDREPLIES)
+    public void sendRepliesToInbox(Comment c, boolean send) throws NetworkException, ApiException {
+        genericPost(reddit.request()
+                .endpoint(Endpoints.SENDREPLIES)
+                .post(JrawUtils.mapOf(
+                        "id", c.getFullName(),
+                        "state", send
+                )).build());
+    }
     /**
      * Sets whether or not a submission is hidden
      *
