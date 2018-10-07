@@ -103,7 +103,7 @@ public class AccountManager extends AbstractManager {
                 .build());
         return reddit.getSubmission(response.getJson().get("json").get("data").get("id").asText());
     }
-    
+
     @EndpointImplementation(Endpoints.SUBMIT)
     public Submission crosspost(Submission original, String to, String newTitle, Captcha captcha, String captchaAttempt) throws NetworkException, ApiException {
         Map<String, String> args = JrawUtils.mapOf(
@@ -114,7 +114,7 @@ public class AccountManager extends AbstractManager {
                 "crosspost_fullname", original.getFullName(),
                 "title", newTitle
         );
-        
+
         RestResponse response = genericPost(reddit.request()
                 .endpoint(Endpoints.SUBMIT)
                 .post(args)
@@ -147,7 +147,6 @@ public class AccountManager extends AbstractManager {
      * Reports a comment or submission.
      *
      * @param s             The submission to vote on
-     * @param voteDirection How to vote
      * @param <T>           The Votable Thing to vote on
      * @throws NetworkException If the request was not successful
      * @throws ApiException     If the API returned an error
@@ -262,7 +261,7 @@ public class AccountManager extends AbstractManager {
                         "state", send
                 )).build());
     }
-    
+
  @EndpointImplementation(Endpoints.SENDREPLIES)
     public void sendRepliesToInbox(Comment c, boolean send) throws NetworkException, ApiException {
         genericPost(reddit.request()

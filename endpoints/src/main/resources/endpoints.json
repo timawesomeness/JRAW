@@ -164,6 +164,7 @@
         "GET /api/v1/me/blocked",
         "GET /api/v1/me/friends",
         "GET /api/v1/user/{username}/trophies",
+        "GET /best",
         "GET /by_id/{names}",
         "GET /comments/{article}",
         "GET /controversial",

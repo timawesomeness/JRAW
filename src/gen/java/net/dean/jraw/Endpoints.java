@@ -318,6 +318,8 @@ public enum Endpoints {
     GILDED("GET /gilded", "read"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#GET_hot">{@code GET /hot}</a>" included in the "read" scope */
     HOT("GET /hot", "read"),
+    /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#GET_best">{@code GET /best}</a>" included in the "read" scope */
+    BEST("GET /best", "read"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#GET_live_%7Bthread%7D">{@code GET /live/{thread}}</a>" included in the "read" scope */
     LIVE_THREAD("GET /live/{thread}", "read"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#GET_live_%7Bthread%7D_about">{@code GET /live/{thread}/about}</a>" included in the "read" scope */
