@@ -39,11 +39,29 @@ public abstract class RedditObject extends JsonModel {
         return DistinguishedStatus.getByJsonValue(distinguished);
     }
 
-    protected final Integer _getTimesGilded() {
-        if (!getDataNode().has("gilded")) {
+    protected final Integer _getTimesSilvered() {
+        if (!getDataNode().has("gildings")
+                || !getDataNode().get("gildings").has("gid_1")) {
             return 0;
         }
-        return getDataNode().get("gilded").asInt();
+        // gid_1 is silver, 2 gold, 3 platinum
+        return getDataNode().get("gildings").get("gid_1").asInt();
+    }
+
+    protected final Integer _getTimesGilded() {
+        if (!getDataNode().has("gildings")
+                || !getDataNode().get("gildings").has("gid_2")) {
+            return 0;
+        }
+        return getDataNode().get("gildings").get("gid_2").asInt();
+    }
+
+    protected final Integer _getTimesPlatinized() {
+        if (!getDataNode().has("gildings")
+                || !getDataNode().get("gildings").has("gid_3")) {
+            return 0;
+        }
+        return getDataNode().get("gildings").get("gid_3").asInt();
     }
 
     protected final Integer _getScore() {
