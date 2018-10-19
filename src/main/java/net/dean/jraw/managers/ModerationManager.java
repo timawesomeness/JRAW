@@ -60,11 +60,11 @@ public class ModerationManager extends AbstractManager {
      * @throws net.dean.jraw.http.NetworkException If the request was not successful
      * @throws net.dean.jraw.ApiException          If the API returned an error
      */
-    @EndpointImplementation({Endpoints.MARKSPOILER, Endpoints.UNMARKSPOILER})
+    @EndpointImplementation({Endpoints.SPOILER, Endpoints.UNSPOILER})
     public void setSpoiler(Submission s, boolean nsfw) throws NetworkException,
             ApiException {
         genericPost(reddit.request()
-                .endpoint(nsfw ? Endpoints.MARKSPOILER : Endpoints.UNMARKSPOILER)
+                .endpoint(nsfw ? Endpoints.SPOILER : Endpoints.UNSPOILER)
                 .post(JrawUtils.mapOf(
                         "id", s.getFullName()
                 )).build());
@@ -95,7 +95,7 @@ public class ModerationManager extends AbstractManager {
      * @throws NetworkException If the request was not successful
      * @throws ApiException     If the API returned an error
      */
-    @EndpointImplementation(Endpoints.OAUTH_ME_FRIENDS_USERNAME_PUT)
+    @EndpointImplementation(Endpoints.FRIEND)
     public void banUser(String subreddit, String name, String reason, String note, String message, int days) throws NetworkException, ApiException {
         Map<String, String> args = JrawUtils.mapOf(
                 "name", name,
@@ -126,7 +126,7 @@ public class ModerationManager extends AbstractManager {
      * @throws NetworkException If the request was not successful
      * @throws ApiException     If the API returned an error
      */
-    @EndpointImplementation(Endpoints.OAUTH_ME_FRIENDS_USERNAME_PUT)
+    @EndpointImplementation(Endpoints.FRIEND)
     public void banUserPermanently(String subreddit, String name, String reason, String note, String message) throws NetworkException, ApiException {
         Map<String, String> args = JrawUtils.mapOf(
                 "name", name,
