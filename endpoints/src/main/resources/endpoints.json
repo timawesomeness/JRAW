@@ -184,7 +184,7 @@
         "GET /r/{subreddit}/about",
         "GET /random",
         "GET /related/{article}",
-        "GET /rules",
+        "GET /r/{subreddit}/about/rules",
         "GET /search",
         "GET /sidebar",
         "GET /sticky",
