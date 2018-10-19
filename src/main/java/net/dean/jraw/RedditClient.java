@@ -449,6 +449,33 @@ public class RedditClient extends RestClient {
     }
 
     /**
+     * Gets a subreddit's rules
+     * @param subreddit The subreddit whose rules to get
+     * @return A Ruleset containing the rules
+     */
+    @EndpointImplementation(Endpoints.SUBREDDIT_ABOUT_RULES)
+    public Ruleset getRules(String subreddit) throws NetworkException {
+        if (subreddit == null) throw new NullPointerException("subreddit cannot be null");
+
+        HttpRequest.Builder request = request();
+        request = request.endpoint(Endpoints.SUBREDDIT_ABOUT_RULES, subreddit);
+        RestResponse response = execute(request.build());
+
+        List<SubredditRule> subRules = new ArrayList<>();
+        List<String> siteRules = new ArrayList<>();
+
+        for (JsonNode subRuleNode : response.getJson().get("rules")) {
+            subRules.add(new SubredditRule(subRuleNode));
+        }
+
+        for (JsonNode siteRuleNode: response.getJson().get("site_rules")) {
+            siteRules.add(siteRuleNode.asText());
+        }
+
+        return new Ruleset(subRules, siteRules);
+    }
+
+    /**
      * Gets a list of trending subreddits' names. See <a href="http://www.reddit.com/r/trendingsubreddits/">here</a> for more.
      * @return A list of trending subreddits' names
      */
