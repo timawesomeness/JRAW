@@ -96,7 +96,9 @@
         "POST /api/set_suggested_sort",
         "POST /api/unignore_reports",
         "POST /api/unlock",
-        "POST /api/unmarknsfw"
+        "POST /api/unmarknsfw",
+        "POST /api/spoiler",
+        "POST /api/unspoiler"
     ],
     "modself": [
         "POST /api/accept_moderator_invite",
@@ -182,7 +184,7 @@
         "GET /r/{subreddit}/about",
         "GET /random",
         "GET /related/{article}",
-        "GET /rules",
+        "GET /r/{subreddit}/about/rules",
         "GET /search",
         "GET /sidebar",
         "GET /sticky",
