@@ -14,4 +14,22 @@ public interface Gildable extends JsonAttribute {
      */
     @JsonProperty
     Integer getTimesGilded();
+
+    /**
+     * Gets the number of times this comment has received reddit silver. If this model was retrieved from the inbox, then
+     * this will return 0.
+     *
+     * @return The number of times this comment has received reddit silver
+     */
+    @JsonProperty
+    Integer getTimesSilvered();
+
+    /**
+     * Gets the number of times this comment has received reddit platinum. If this model was retrieved from the inbox, then
+     * this will return 0.
+     *
+     * @return The number of times this comment has received reddit platinum
+     */
+    @JsonProperty
+    Integer getTimesPlatinized();
 }

@@ -62,6 +62,16 @@ public abstract class PublicContribution extends Contribution implements Disting
     }
 
     @Override
+    public Integer getTimesSilvered() {
+        return _getTimesSilvered();
+    }
+
+    @Override
+    public Integer getTimesPlatinized() {
+        return _getTimesPlatinized();
+    }
+
+    @Override
     public Integer getScore() {
         return _getScore();
     }
