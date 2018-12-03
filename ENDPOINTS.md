@@ -1,9 +1,9 @@
-<!--- Generated 2018-10-19 at 01:09:27 MDT. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
+<!--- Generated 2018-12-02 at 23:35:11 MST. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
 #Endpoints
 
 This file contains a list of all the endpoints (regardless of if they have been implemented) that can be found at the [official reddit API docs](https://www.reddit.com/dev/api/oauth). To update this file, run `gradle endpoints:update`.
 
-So far **136** endpoints (out of 195 total) have been implemented.
+So far **137** endpoints (out of 195 total) have been implemented.
 
 ##(any scope)
 Method|Endpoint|Implemention
@@ -100,11 +100,11 @@ Method|Endpoint|Implemention
 `POST`|[`/api/clearflairtemplates`](https://www.reddit.com/dev/api/oauth#POST_api_clearflairtemplates)|None
 `POST`|[`/api/deleteflair`](https://www.reddit.com/dev/api/oauth#POST_api_deleteflair)|None
 `POST`|[`/api/deleteflairtemplate`](https://www.reddit.com/dev/api/oauth#POST_api_deleteflairtemplate)|None
-`POST`|[`/api/flair`](https://www.reddit.com/dev/api/oauth#POST_api_flair)|None
 `POST`|[`/api/flairconfig`](https://www.reddit.com/dev/api/oauth#POST_api_flairconfig)|None
 `POST`|[`/api/flaircsv`](https://www.reddit.com/dev/api/oauth#POST_api_flaircsv)|None
 `GET`|[`/api/flairlist`](https://www.reddit.com/dev/api/oauth#GET_api_flairlist)|None
 `POST`|[`/api/flairtemplate`](https://www.reddit.com/dev/api/oauth#POST_api_flairtemplate)|None
+`POST`|[`/api/flair`](https://www.reddit.com/dev/api/oauth#POST_api_flair)|[`ModerationManager.setFlair(String, Submission, String, String, String)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setFlair(java.lang.String, net.dean.jraw.models.Submission, java.lang.String, java.lang.String, java.lang.String))
 
 ##modlog
 Method|Endpoint|Implemention

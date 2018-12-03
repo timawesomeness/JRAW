@@ -406,4 +406,68 @@ public class ModerationManager extends AbstractManager {
             throw response.getError();
         }
     }
+
+    /**
+     * Sets a submission's flair with specific text and CSS class. Must be a moderator of the
+     * subreddit.
+     * @param submission Submission to set flair on
+     * @param text Flair text
+     * @param cssClass Flair CSS class
+     * @throws NetworkException If the request was not successful.
+     * @throws ApiException If the API returned an error.
+     */
+    public void setFlair(String subreddit, Submission submission, String text, String cssClass)
+            throws NetworkException, ApiException {
+        setFlair(subreddit, submission, null, text, cssClass);
+    }
+
+    /**
+     * Sets a user's flair with specific text and CSS class. Must be a moderator of the subreddit.
+     * @param user User to set flair of
+     * @param text Flair text
+     * @param cssClass Flair CSS class
+     * @throws NetworkException If the request was not successful.
+     * @throws ApiException If the API returned an error.
+     */
+    public void setFlair(String subreddit, String user, String text, String cssClass)
+            throws NetworkException, ApiException {
+        setFlair(subreddit, null, user, text, cssClass);
+    }
+
+    /**
+     * Sets either a user's or submission's flair with specific text and CSS class. Must be a
+     * moderator of the subreddit. If submission and user are both non-null, submission will be used
+     * @param submission Submission to set flair on
+     * @param user User to set flair of
+     * @param text Flair text
+     * @param cssClass Flair CSS class
+     * @throws NetworkException If the request was not successful.
+     * @throws ApiException If the API returned an error.
+     */
+    @EndpointImplementation(Endpoints.FLAIR)
+    private void setFlair(String subreddit, Submission submission, String user, String text, String cssClass)
+            throws NetworkException, ApiException {
+        Map<String, String> args = JrawUtils.mapOf(
+                "api_type", "json",
+                "text", text,
+                "css_class", cssClass
+        );
+
+        if (submission != null) {
+            args.put("link", submission.getFullName());
+        } else {
+            if (user == null) {
+                throw new IllegalArgumentException("User or submission must not be null!");
+            }
+            args.put("name", user);
+        }
+
+        RestResponse response = reddit.execute(reddit.request()
+                .post(args)
+                .path("/r/" + subreddit + Endpoints.FLAIR.getEndpoint().getUri())
+                .build());
+        if (response.hasErrors()) {
+            throw response.getError();
+        }
+    }
 }
