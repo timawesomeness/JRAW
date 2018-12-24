@@ -1,9 +1,9 @@
-<!--- Generated 2018-12-02 at 23:35:11 MST. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
+<!--- Generated 2018-12-23 at 23:40:12 MST. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
 #Endpoints
 
 This file contains a list of all the endpoints (regardless of if they have been implemented) that can be found at the [official reddit API docs](https://www.reddit.com/dev/api/oauth). To update this file, run `gradle endpoints:update`.
 
-So far **137** endpoints (out of 195 total) have been implemented.
+So far **138** endpoints (out of 195 total) have been implemented.
 
 ##(any scope)
 Method|Endpoint|Implemention
@@ -293,7 +293,7 @@ Method|Endpoint|Implemention
 ##wikiedit
 Method|Endpoint|Implemention
 :----:|--------|------------
-`POST`|[`/api/wiki/edit`](https://www.reddit.com/dev/api/oauth#POST_api_wiki_edit)|None
+`POST`|[`/api/wiki/edit`](https://www.reddit.com/dev/api/oauth#POST_api_wiki_edit)|[`WikiManager.edit(String, String, String, String)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/WikiManager.html#edit(java.lang.String, java.lang.String, java.lang.String, java.lang.String))
 
 ##wikiread
 Method|Endpoint|Implemention

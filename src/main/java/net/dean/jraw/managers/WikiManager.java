@@ -1,7 +1,9 @@
 package net.dean.jraw.managers;
 
+import net.dean.jraw.ApiException;
 import net.dean.jraw.EndpointImplementation;
 import net.dean.jraw.Endpoints;
+import net.dean.jraw.http.RestResponse;
 import net.dean.jraw.util.JrawUtils;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.NetworkException;
@@ -12,6 +14,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class is responsible for managing a wiki
@@ -88,6 +91,36 @@ public class WikiManager extends AbstractManager {
                 .path(path)
                 .build();
         return reddit.execute(r).as(WikiPage.class);
+    }
+
+    /**
+     * Edit (or create) a wiki page
+     *
+     * @param subreddit Subreddit the page is in
+     * @param page Page to edit/create
+     * @param content Content of the page
+     * @param reason Reason for the edit
+     * @throws NetworkException If the request wasn't successful
+     * @throws ApiException If the API returned an error
+     */
+    @EndpointImplementation(Endpoints.WIKI_EDIT)
+    public void edit(String subreddit, String page, String content, String reason)
+            throws NetworkException, ApiException {
+        String path = JrawUtils.getSubredditPath(subreddit, Endpoints.WIKI_EDIT.getEndpoint().getUri());
+
+        Map<String, String> args = JrawUtils.mapOf(
+                "page", page,
+                "content", content,
+                "reason", reason != null ? reason : ""
+        );
+
+        RestResponse response = reddit.execute(reddit.request()
+                .post(args)
+                .path(path)
+                .build());
+        if (response.hasErrors()) {
+            throw response.getError();
+        }
     }
 
     /**
