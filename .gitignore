@@ -18,3 +18,6 @@ todo.txt
 # Other
 bin/
 *.swp
+
+# Local properties file
+local.properties

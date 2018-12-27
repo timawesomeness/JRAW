@@ -130,8 +130,6 @@ public enum Endpoints {
     DELETEFLAIR("POST /api/deleteflair", "modflair"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_deleteflairtemplate">{@code POST /api/deleteflairtemplate}</a>" included in the "modflair" scope */
     DELETEFLAIRTEMPLATE("POST /api/deleteflairtemplate", "modflair"),
-    /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_flair">{@code POST /api/flair}</a>" included in the "modflair" scope */
-    FLAIR("POST /api/flair", "modflair"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_flairconfig">{@code POST /api/flairconfig}</a>" included in the "modflair" scope */
     FLAIRCONFIG("POST /api/flairconfig", "modflair"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_flaircsv">{@code POST /api/flaircsv}</a>" included in the "modflair" scope */
@@ -140,6 +138,8 @@ public enum Endpoints {
     FLAIRLIST("GET /api/flairlist", "modflair"),
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_flairtemplate">{@code POST /api/flairtemplate}</a>" included in the "modflair" scope */
     FLAIRTEMPLATE("POST /api/flairtemplate", "modflair"),
+    /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#POST_api_flair">{@code POST /api/flair}</a>" included in the "modflair" scope */
+    FLAIR("POST /api/flair", "modflair"),
 
     ///////// modlog /////////
     /** Represents the endpoint "<a href="https://www.reddit.com/dev/api/oauth#GET_about_log">{@code GET /about/log}</a>" included in the "modlog" scope */
