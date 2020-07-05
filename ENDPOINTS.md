@@ -1,4 +1,4 @@
-<!--- Generated 2018-12-23 at 23:40:12 MST. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
+<!--- Generated 2020-07-04 at 21:33:26 MDT. Use `gradle endpoints:update` to update. DO NOT MODIFY DIRECTLY -->
 #Endpoints
 
 This file contains a list of all the endpoints (regardless of if they have been implemented) that can be found at the [official reddit API docs](https://www.reddit.com/dev/api/oauth). To update this file, run `gradle endpoints:update`.
@@ -124,13 +124,13 @@ Method|Endpoint|Implemention
 `POST`|[`/api/unignore_reports`](https://www.reddit.com/dev/api/oauth#POST_api_unignore_reports)|None
 `POST`|[`/api/approve`](https://www.reddit.com/dev/api/oauth#POST_api_approve)|[`ModerationManager.approve(Thing)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#approve(net.dean.jraw.models.Thing))
 `POST`|[`/api/distinguish`](https://www.reddit.com/dev/api/oauth#POST_api_distinguish)|[`ModerationManager.setDistinguishedStatus(Thing, DistinguishedStatus)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setDistinguishedStatus(net.dean.jraw.models.Thing, net.dean.jraw.models.DistinguishedStatus))
-`POST`|[`/api/lock`](https://www.reddit.com/dev/api/oauth#POST_api_lock)|[`ModerationManager.setLocked(Submission)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setLocked(net.dean.jraw.models.Submission))
+`POST`|[`/api/lock`](https://www.reddit.com/dev/api/oauth#POST_api_lock)|[`ModerationManager.setLocked(Thing)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setLocked(net.dean.jraw.models.Thing))
 `POST`|[`/api/marknsfw`](https://www.reddit.com/dev/api/oauth#POST_api_marknsfw)|[`ModerationManager.setNsfw(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setNsfw(net.dean.jraw.models.Submission, boolean))
 `POST`|[`/api/remove`](https://www.reddit.com/dev/api/oauth#POST_api_remove)|[`ModerationManager.remove(Thing, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#remove(net.dean.jraw.models.Thing, boolean))
 `POST`|[`/api/set_contest_mode`](https://www.reddit.com/dev/api/oauth#POST_api_set_contest_mode)|[`ModerationManager.setContestMode(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setContestMode(net.dean.jraw.models.Submission, boolean))
 `POST`|[`/api/set_subreddit_sticky`](https://www.reddit.com/dev/api/oauth#POST_api_set_subreddit_sticky)|[`ModerationManager.setSticky(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setSticky(net.dean.jraw.models.Submission, boolean))
 `POST`|[`/api/spoiler`](https://www.reddit.com/dev/api/oauth#POST_api_spoiler)|[`ModerationManager.setSpoiler(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setSpoiler(net.dean.jraw.models.Submission, boolean))
-`POST`|[`/api/unlock`](https://www.reddit.com/dev/api/oauth#POST_api_unlock)|[`ModerationManager.setUnlocked(Submission)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setUnlocked(net.dean.jraw.models.Submission))
+`POST`|[`/api/unlock`](https://www.reddit.com/dev/api/oauth#POST_api_unlock)|[`ModerationManager.setUnlocked(Thing)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setUnlocked(net.dean.jraw.models.Thing))
 `POST`|[`/api/unmarknsfw`](https://www.reddit.com/dev/api/oauth#POST_api_unmarknsfw)|[`ModerationManager.setNsfw(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setNsfw(net.dean.jraw.models.Submission, boolean))
 `POST`|[`/api/unspoiler`](https://www.reddit.com/dev/api/oauth#POST_api_unspoiler)|[`ModerationManager.setSpoiler(Submission, boolean)`](https://thatjavanerd.github.io/JRAW/docs/git/net/dean/jraw/managers/ModerationManager.html#setSpoiler(net.dean.jraw.models.Submission, boolean))
 
