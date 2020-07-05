@@ -254,7 +254,7 @@ public class ModerationManager extends AbstractManager {
      * @throws ApiException     If the Reddit API returned an error
      */
     @EndpointImplementation(Endpoints.LOCK)
-    public void setLocked(Submission s) throws NetworkException, ApiException {
+    public void setLocked(Thing s) throws NetworkException, ApiException {
         genericPost(reddit.request()
                 .endpoint(Endpoints.LOCK)
                 .post(JrawUtils.mapOf(
@@ -272,7 +272,7 @@ public class ModerationManager extends AbstractManager {
      * @throws ApiException     If the Reddit API returned an error
      */
     @EndpointImplementation(Endpoints.UNLOCK)
-    public void setUnlocked(Submission s) throws NetworkException, ApiException {
+    public void setUnlocked(Thing s) throws NetworkException, ApiException {
         genericPost(reddit.request()
                 .endpoint(Endpoints.UNLOCK)
                 .post(JrawUtils.mapOf(
